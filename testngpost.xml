@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/h.venkata.rayapudi/IdeaProjects/ATB13xAPIAutomationPrograms/src/test/java/com/thetestingacademy/sample/ex_03_TestNG_AllureReport">
+        <classes>
+            <class name="com.thetestingacademy.sample.ex_04_RestAssured_HTTP_Methods.POST.APITesting010NonBDDPost">
+
+            </class>
+        </classes>
+    </test>
+</suite>

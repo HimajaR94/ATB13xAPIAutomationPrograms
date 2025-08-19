@@ -1,4 +1,4 @@
-package com.thetestingacademy.sample.ex_01_RA_Basics.ex_02_RA_Concepts;
+package com.thetestingacademy.sample.ex_02_RA_Concepts;
 
 public class APITesting_Lab04_BuilderPattern {
     public APITesting_Lab04_BuilderPattern step1(){
