@@ -1,4 +1,4 @@
-package com.thetestingacademy.sample.ex_04_RestAssured_HTTP_Methods.PATCH;
+package com.thetestingacademy.sample.ex_04_RestAssured_HTTP_Methods.DELETE;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -7,7 +7,7 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
-public class APITesting012NonBDDPatch {
+public class APITesting015NonBDDDelete {
 
     //PUT
     //Toke, booking id
@@ -19,25 +19,22 @@ public class APITesting012NonBDDPatch {
     ValidatableResponse vr;
 
     @Test
-    public void test_put_nonbdd(){
-        String bookingid="2301";
+    public void test_DELETE_nonbdd(){
+        String bookingid="4627";
+        String token="bdc2f2e724f30a6";
 
 
-        String payload= "{\n" +
-                "    \"firstname\" : \"Himaja\",\n" +
-                "    \"lastname\" : \"Brown\"\n" +
-                "}";
 
         r= RestAssured.given();
         r.baseUri("https://restful-booker.herokuapp.com");
         r.basePath("/booking/"+bookingid);
-        r.header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=");
+        r.cookie("token",token);
         r.contentType(ContentType.JSON);
-        r.body(payload).log().all();
 
-        response=r.when().log().all().patch();
 
-        vr=response.then().log().all().statusCode(200);
+        response=r.when().log().all().delete();
+
+        vr=response.then().log().all().statusCode(201);
 
 
 

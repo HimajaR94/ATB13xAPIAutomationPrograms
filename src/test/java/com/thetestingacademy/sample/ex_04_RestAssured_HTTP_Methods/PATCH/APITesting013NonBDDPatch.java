@@ -7,7 +7,7 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
-public class APITesting012NonBDDPatchtoken {
+public class APITesting013NonBDDPatch {
 
     //PUT
     //Toke, booking id
@@ -19,19 +19,19 @@ public class APITesting012NonBDDPatchtoken {
     ValidatableResponse vr;
 
     @Test
-    public void test_put_nonbdd(){
-        String bookingid="3107";
-        String token="111291c31055984";
+    public void test_patch_nonbdd(){
+        String bookingid="2301";
+
 
         String payload= "{\n" +
-                "    \"firstname\" : \"James\",\n" +
+                "    \"firstname\" : \"Himaja\",\n" +
                 "    \"lastname\" : \"Brown\"\n" +
                 "}";
 
         r= RestAssured.given();
         r.baseUri("https://restful-booker.herokuapp.com");
         r.basePath("/booking/"+bookingid);
-        r.cookie("token",token);
+        r.header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=");
         r.contentType(ContentType.JSON);
         r.body(payload).log().all();
 
